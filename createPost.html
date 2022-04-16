@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 50px;
+      font-family: Noto Sans TC;
+    }
+    .title {
+      position: relative;
+    }
+    .title-text{
+      background: #fff;
+      border: 2px solid #000400;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+      font-size: 24px;
+    }
+    .title::after{
+      display: block;
+      content: '';
+      background: #fff;
+      border: 2px solid #000400;
+      height: 64px;
+      width: 100%;
+      position: absolute;
+      right: 2px;
+      bottom: -5px;
+      z-index: -1;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 32px;
+      background: #fff;
+      border: 2px solid #000400;
+      border-radius: 8px;
+    }
+    .form-item{
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    label{
+      margin-bottom: 4px;
+    }
+    textarea, input{
+      padding: 12px 16px;
+    }
+    button{
+      background: #EEC32A;
+      border: 2px solid #000400;
+      border-radius: 8px;
+      box-shadow: -2px 2px 0px #000400;
+      padding: 16px;
+      margin: 0 auto;
+      margin-top: 40px;
+      font-size: 19px;
+      font-weight: bold;
+      font-family: Azeret Mono;
+      width: 80%;
+      cursor: pointer;
+    }
+    button:hover{
+      opacity: .8;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="title">
+      <div class="title-text">張貼動態</div>
+    </div>
+    <form>
+      <div class="form-item">
+        <label for="">發文者名稱</label>
+        <input type="text" placeholder="輸入發文者名稱">
+      </div>
+      <div class="form-item">
+        <label for="">發文者照片</label>
+        <input type="text" placeholder="輸入發文者照片">
+      </div>
+      <div class="form-item">
+        <label for="">貼文內容</label>
+        <textarea name="" id="" cols="30" rows="10" placeholder="輸入您的貼文內容"></textarea>
+      </div>
+      <div class="form-item">
+        <label for="">圖片網址</label>
+        <input type="text" placeholder="輸入圖片網址">
+      </div>
+      <button @click="submit">送出貼文</button>
+    </form>
+  </div>
+
+</body>
+</html>
