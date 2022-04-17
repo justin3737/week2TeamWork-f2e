@@ -9,7 +9,7 @@ function onload() {
 function addStory(dataList) {
   document.getElementById('gettting-data').style.display = 'none';
   const stories = document.querySelector('#stories')
-  dataList.forEach((data) => {
+  dataList.forEach((data, idx) => {
     const story = document.createElement('li')
     story.classList.add('mb-4')
     story.innerHTML = /*html*/ `
@@ -26,12 +26,17 @@ function addStory(dataList) {
         </div>
       </div>
       <div class="media-content m-0">
-        <p class="mt-0">${data.userContent}
-        <img src='${data.imgUrl}' alt='upload-photo'/>
-        </p>
+        <p class="mt-0 media-content-p">${data.userContent}</p>
       </div>
     </div>
   `
     stories.appendChild(story)
+
+    if(data.imgUrl){
+      let image = document.createElement('img');
+      image.src = data.imgUrl;
+      image.alt = 'upload-photo';
+      document.getElementsByClassName('media-content-p')[idx].appendChild(image);
+    }
   })
 }
