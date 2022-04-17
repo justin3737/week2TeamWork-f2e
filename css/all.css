@@ -1,0 +1,23 @@
+:root {
+  --white: #ffffff;
+  --black: #000400;
+  --yellow: #EEC32A;
+  --grey-100: #EFECE7;
+  --grey-200: #e0e0e0;
+  --grey-300: #707070;
+  --grey-400: #9B9893;
+  --blue-100: #E2EDFA;
+  --blue-500: #03438D;
+  
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC';
+}
+
+img {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
