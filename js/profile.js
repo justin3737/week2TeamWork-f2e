@@ -28,9 +28,24 @@ function addStory(dataList) {
       </div>
       <div class="media-content m-0">
         <p class="mt-0">${data.userContent}</p>
+        <img
+            src="${data.imgUrl}"
+            alt="upload-photo"
+          />`
+  story.innerHTML += showPhoto(data.imgUrl)
+  story.innerHTML += `
       </div>
     </div>
   `
     stories.appendChild(story)
   })
+}
+
+
+function showPhoto(imgUrl) {
+  if (!!imgUrl) {
+    return `<img src='${imgUrl}' alt='upload-photo/>`
+  } else {
+    return ""
+  }
 }
