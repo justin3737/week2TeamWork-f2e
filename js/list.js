@@ -26,7 +26,7 @@ function addStory(dataList) {
         </div>
       </div>
       <div class="media-content m-0">
-        <p class="mt-0">${data.userContent}>
+        <p class="mt-0">${data.userContent}
         <img src='${data.imgUrl}' alt='upload-photo'/>
         </p>
       </div>
