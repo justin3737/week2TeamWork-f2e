@@ -2,7 +2,6 @@ function onload() {
   fetch(http)
     .then((response) => response.json())
     .then((response) => {
-      console.log(response.data)
       addStory(response.data)
     })
 }
@@ -27,25 +26,12 @@ function addStory(dataList) {
         </div>
       </div>
       <div class="media-content m-0">
-        <p class="mt-0">${data.userContent}</p>
-        <img
-            src="${data.imgUrl}"
-            alt="upload-photo"
-          />`
-  story.innerHTML += showPhoto(data.imgUrl)
-  story.innerHTML += `
+        <p class="mt-0">${data.userContent}>
+        <img src='${data.imgUrl}' alt='upload-photo'/>
+        </p>
       </div>
     </div>
   `
     stories.appendChild(story)
   })
-}
-
-
-function showPhoto(imgUrl) {
-  if (!!imgUrl) {
-    return `<img src='${imgUrl}' alt='upload-photo/>`
-  } else {
-    return ""
-  }
 }
