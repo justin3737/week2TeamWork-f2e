@@ -1,9 +1,9 @@
 # week2TeamWork f2e
 
-#### 使用說明
+### 使用說明
 兩種獲取後端API 的方式
-- 1. 使用heroku api
-- 2. 使用Node.js + MongoDB 在本地端運行，請使用此 [github](https://github.com/larrylinr5/week2TeamWork
+- 使用heroku api
+- 使用Node.js + MongoDB 在本地端運行，請使用此 [github](https://github.com/larrylinr5/week2TeamWork
 )
 
 
@@ -17,8 +17,8 @@ const http = 'https://lit-headland-53855.herokuapp.com/ArticleList'
 //const http = 'http://127.0.0.1:3005/ArticleList'
 ```
 
-#### 功能一：取得貼文列表頁
+### 功能一：取得貼文列表頁
 ![](image/list.png)
 
-#### 功能二：新增貼文頁
+### 功能二：新增貼文頁
 ![](image/post.png)
