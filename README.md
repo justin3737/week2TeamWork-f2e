@@ -1,8 +1,8 @@
 # week2TeamWork f2e
 
 ### 使用說明
-查看列表 list.html
-建立貼文 createPost.html
+- 查看列表 list.html
+- 建立貼文 createPost.html
 ### Developer 開發說明
 兩種獲取後端API 的方式
 - 使用heroku api
