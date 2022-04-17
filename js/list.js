@@ -1,5 +1,4 @@
 function onload() {
-  console.log('onload')
   fetch(http)
     .then((response) => response.json())
     .then((response) => {
@@ -9,6 +8,7 @@ function onload() {
 }
 
 function addStory(dataList) {
+  document.getElementById('gettting-data').style.display = 'none';
   const stories = document.querySelector('#stories')
   dataList.forEach((data) => {
     const story = document.createElement('li')
