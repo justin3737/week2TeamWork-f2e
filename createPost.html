@@ -36,10 +36,10 @@
       bottom: -5px;
       z-index: -1;
     }
-    form{
+    .form{
       display: flex;
       flex-direction: column;
-      margin-top: 20px;
+      margin: 20px 0 20px;
       padding: 32px;
       background: #fff;
       border: 2px solid #000400;
@@ -55,6 +55,12 @@
     }
     textarea, input{
       padding: 12px 16px;
+    }
+    .error {
+      font-size: 14px;
+      text-align: center;
+      color: #F57375;
+      display: none;
     }
     button{
       background: #EEC32A;
@@ -74,32 +80,40 @@
       opacity: .8;
     }
   </style>
+  
 </head>
 <body>
   <div id="app">
     <div class="title">
       <div class="title-text">張貼動態</div>
     </div>
-    <form>
+    <div class="form">
       <div class="form-item">
         <label for="">發文者名稱</label>
-        <input type="text" placeholder="輸入發文者名稱">
+        <input id="userName" type="text" placeholder="輸入發文者名稱">
+        <span id="userNameError" class="error"></span>
       </div>
       <div class="form-item">
         <label for="">發文者照片</label>
-        <input type="text" placeholder="輸入發文者照片">
+        <input id="userPhoto" type="text" placeholder="輸入發文者照片">
+        <span id="userPhotoError" class="error"></span>
       </div>
       <div class="form-item">
         <label for="">貼文內容</label>
-        <textarea name="" id="" cols="30" rows="10" placeholder="輸入您的貼文內容"></textarea>
+        <textarea id="userContent" cols="30" rows="10" placeholder="輸入您的貼文內容"></textarea>
+        <span id="userContentError" class="error"></span>
       </div>
       <div class="form-item">
         <label for="">圖片網址</label>
-        <input type="text" placeholder="輸入圖片網址">
+        <input id="imgUrl" type="text" placeholder="輸入圖片網址">
+        <span id="imgUrlError" class="error"></span>
       </div>
-      <button @click="submit">送出貼文</button>
-    </form>
+      <span id="apiError" class="error"></span>
+      <button type="button" onclick="submitPost()">送出貼文</button>
+    </div>
   </div>
 
+  <script src="./js/http.js"></script>
+  <script src="./js/createPost.js"></script>
 </body>
 </html>
