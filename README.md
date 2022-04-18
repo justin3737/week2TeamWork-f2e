@@ -1,12 +1,13 @@
 # week2TeamWork f2e
 
 ### 使用說明
-- 查看列表 list.html
+進入 [網站](https://justin3737.github.io/week2TeamWork-f2e/)
+- 查看列表 index.html
 - 建立貼文 createPost.html
 ### Developer 開發說明
 兩種獲取後端API 的方式
 - 使用heroku api
-- 使用Node.js + MongoDB 在本地端運行，請使用此 [github](https://github.com/larrylinr5/week2TeamWork
+- 使用Node.js + MongoDB 在本地端運行，請使用此 [後端github](https://github.com/larrylinr5/week2TeamWork
 )
 
 
