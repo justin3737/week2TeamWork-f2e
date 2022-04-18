@@ -59,3 +59,19 @@
   height: 20px;
   filter: invert(100%);
 }
+
+.writemsg-btn {
+  width: 100%;
+  border: 2px solid var(--black);
+  height: 45px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  background: var(--yellow);
+}
+
+.writemsg-btn:hover {
+  background: var(--yellow);
+  opacity: 0.8;
+}

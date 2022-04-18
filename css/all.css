@@ -8,7 +8,7 @@
   --grey-400: #9B9893;
   --blue-100: #E2EDFA;
   --blue-500: #03438D;
-  
+
 }
 
 * {
@@ -16,8 +16,29 @@
   font-family: 'Noto Sans TC';
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   display: block;
   vertical-align: middle;
   max-width: 100%;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  border: 2px solid #000;
+  padding: 32px;
+}
+

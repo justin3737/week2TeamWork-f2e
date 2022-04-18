@@ -5,13 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/all.css" />
   <style>
-    body {
-      width: 80%;
-      margin: 0 auto;
-      margin-top: 50px;
-      font-family: Noto Sans TC;
-    }
     .title {
       position: relative;
     }
@@ -39,7 +34,7 @@
     .form{
       display: flex;
       flex-direction: column;
-      margin: 20px 0 20px;
+      margin: 20px 0 0;
       padding: 32px;
       background: #fff;
       border: 2px solid #000400;
@@ -80,36 +75,38 @@
       opacity: .8;
     }
   </style>
-  
+
 </head>
 <body>
   <div id="app">
-    <div class="title">
-      <div class="title-text">張貼動態</div>
-    </div>
-    <div class="form">
-      <div class="form-item">
-        <label for="">發文者名稱</label>
-        <input id="userName" type="text" placeholder="輸入發文者名稱">
-        <span id="userNameError" class="error"></span>
+    <div class="container">
+      <div class="title">
+        <div class="title-text">張貼動態</div>
       </div>
-      <div class="form-item">
-        <label for="">發文者照片</label>
-        <input id="userPhoto" type="text" placeholder="輸入發文者照片">
-        <span id="userPhotoError" class="error"></span>
+      <div class="form">
+        <div class="form-item">
+          <label for="">發文者名稱</label>
+          <input id="userName" type="text" placeholder="輸入發文者名稱">
+          <span id="userNameError" class="error"></span>
+        </div>
+        <div class="form-item">
+          <label for="">發文者照片</label>
+          <input id="userPhoto" type="text" placeholder="輸入發文者照片">
+          <span id="userPhotoError" class="error"></span>
+        </div>
+        <div class="form-item">
+          <label for="">貼文內容</label>
+          <textarea id="userContent" cols="30" rows="10" placeholder="輸入您的貼文內容"></textarea>
+          <span id="userContentError" class="error"></span>
+        </div>
+        <div class="form-item">
+          <label for="">圖片網址</label>
+          <input id="imgUrl" type="text" placeholder="輸入圖片網址">
+          <span id="imgUrlError" class="error"></span>
+        </div>
+        <span id="apiError" class="error"></span>
+        <button type="button" onclick="submitPost()">送出貼文</button>
       </div>
-      <div class="form-item">
-        <label for="">貼文內容</label>
-        <textarea id="userContent" cols="30" rows="10" placeholder="輸入您的貼文內容"></textarea>
-        <span id="userContentError" class="error"></span>
-      </div>
-      <div class="form-item">
-        <label for="">圖片網址</label>
-        <input id="imgUrl" type="text" placeholder="輸入圖片網址">
-        <span id="imgUrlError" class="error"></span>
-      </div>
-      <span id="apiError" class="error"></span>
-      <button type="button" onclick="submitPost()">送出貼文</button>
     </div>
   </div>
 

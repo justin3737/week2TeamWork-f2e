@@ -59,6 +59,7 @@ function postData(url, data) {
         document.getElementById("userContent").value = ''
         document.getElementById("userPhoto").value = ''
         document.getElementById("imgUrl").value = ''
+        window.location = 'list.html'
       } else {
         // 顯示 API 回傳的錯誤訊息
         document.getElementById("apiError").style.display = "block";

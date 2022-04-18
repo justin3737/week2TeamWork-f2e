@@ -40,3 +40,7 @@ function addStory(dataList) {
     }
   })
 }
+
+goPostPage = ()=> {
+  location.href = 'createPost.html';
+}
