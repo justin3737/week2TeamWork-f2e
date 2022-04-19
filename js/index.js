@@ -23,12 +23,8 @@ function addStory(dataList) {
     story.classList.add('mb-4');
     story.innerHTML = /*html*/ `
       <div class="media">
-      <div class="user mb-3">
-        <img
-          src="${data.userPhoto}"
-          alt="user-photo"
-          class="user-photo mr-3"
-        />
+      <div class="user mb-3 user-photo-div">
+
         <div class="">
           <a class="user-name" href="#">${data.userName}</a>
           <p class="date-time m-0">${data.createAt}</p>
@@ -41,14 +37,49 @@ function addStory(dataList) {
   `
     stories.appendChild(story)
 
-    if (data.imgUrl) {
-      let image = document.createElement('img');
-      image.src = data.imgUrl;
-      image.alt = 'upload-photo';
-      document.getElementsByClassName('media-content-p')[idx].appendChild(image);
+    if (data.imgUrl && data.imgUrl.startsWith('https')) {
+      appendImage(data.imgUrl, idx);
     }
+
+    let userPhoto = document.createElement('img');
+    let defPhoto = 'https://i.imgur.com/NUyttbnb.jpg';  //預設圖
+    userPhoto.src = (data.userPhoto.startsWith('https')!== true)?defPhoto:data.userPhoto;
+    userPhoto.alt = 'upload-photo';
+    addClass(userPhoto, 'user-photo');
+    addClass(userPhoto, 'mr-3');
+    document.getElementsByClassName('user-photo-div')[idx].prepend(userPhoto);
   })
 }
+
+//加入class
+function addClass(element, className){
+  element.className += ' ' + className;
+}
+
+//非同步加入圖片，避免錯誤網址
+async function appendImage(url, idx) {
+  await imageLoaded(url, 'upload-photo')
+    .then(function(image) {
+      document.getElementsByClassName('media-content-p')[idx].appendChild(image);
+    })
+    .catch(function(error) {
+      console.log('error: ', error);
+    });
+}
+
+
+//加載image
+function imageLoaded(src, alt = '') {
+  return new Promise(function(resolve) {
+      const image = document.createElement('img');
+      image.setAttribute('alt', alt);
+      image.setAttribute('src', src);
+      image.addEventListener('load', function() {
+          resolve(image);
+      });
+  });
+}
+
 
 // 下拉式選單
 filterSelect.addEventListener("change", (e) => {
@@ -98,7 +129,7 @@ filterBar.addEventListener("click", (e) => {
     } else {
       addStory(filterData);
     }
-    
+
     // 清空搜尋結果
     filterInput.value = '';
   }
